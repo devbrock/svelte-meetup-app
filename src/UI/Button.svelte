@@ -11,7 +11,7 @@
     <a {href} class="text-{textcolor}">{caption}</a>
   </button>
 {:else}
-  <button {type} class="btn btn-{background} text-{textcolor}">
+  <button {type} class="btn btn-{background} text-{textcolor} " on:click>
     {caption}
   </button>
 {/if}

@@ -12,7 +12,9 @@
         description={meetup.description}
         imageUrl={meetup.imageUrl}
         address={meetup.address}
-        email={meetup.contactEmail} />
+        email={meetup.contactEmail}
+        on:favorite-meetup={() => alert('clicked favorite')}
+        on:show-details={() => alert('clicked show details')} />
     </div>
   {/each}
 </div>
