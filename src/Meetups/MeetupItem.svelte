@@ -9,14 +9,20 @@
   export let address;
   export let email;
 
+  let favBackground = "warning";
+  let favTextcolor = "dark";
+  let favCaption = "Favorite";
+
   const dispatch = createEventDispatcher();
 
   function favoriteMeetup() {
-    dispatch("favorite-meetup");
+    favBackground = "dark";
+    favTextcolor = "warning";
+    favCaption = "Favorited";
   }
 
   function showDetails() {
-    dispatch("show-details");
+    dispatch("show-details", { id: "m1" });
   }
 </script>
 
@@ -40,9 +46,9 @@
       background="info"
       textcolor="light" />
     <Button
-      caption="Favorite"
-      background="warning"
-      textcolor="dark"
+      caption={favCaption}
+      background={favBackground}
+      textcolor={favTextcolor}
       on:click={favoriteMeetup} />
   </footer>
 </div>

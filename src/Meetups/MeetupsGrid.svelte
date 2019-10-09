@@ -1,6 +1,10 @@
 <script>
   import MeetupItem from "./MeetupItem.svelte";
   export let meetups;
+
+  function getDetails(event) {
+    console.log(event.detail);
+  }
 </script>
 
 <div class="row">
@@ -13,8 +17,7 @@
         imageUrl={meetup.imageUrl}
         address={meetup.address}
         email={meetup.contactEmail}
-        on:favorite-meetup={() => alert('clicked favorite')}
-        on:show-details={() => alert('clicked show details')} />
+        on:show-details={getDetails} />
     </div>
   {/each}
 </div>
